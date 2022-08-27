@@ -1,0 +1,12 @@
+name: basic-node
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: |
+          npm install -g bats
+          bats -v
+          echo "Hello basic node"
